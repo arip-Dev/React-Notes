@@ -1,0 +1,61 @@
+html,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container2 {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container-notes {
+  /* background-color: aqua; */
+  width: 40%;
+}
+
+.container-notes button {
+  margin-top: 15px;
+  background-color: transparent;
+  padding: 12px;
+  border-radius: 4px;
+  color: white;
+  border-color: white;
+  border: 1px solid #aaa;
+}
+
+.container-notes form{
+    /* background-color: red; */
+    flex-direction: column;
+    display: flex;
+}
+
+.container-notes textarea {
+  background-color: transparent;
+  margin-top: 15px;
+  height: 13rem;
+  border-radius: 4px;
+  padding: 12px;
+  min-height: 175px;
+  border: 1px solid #aaa;
+  color: white;
+}
+
+.container-notes input {
+  padding: 12px;
+  background-color: transparent;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+
+.container-notes p {
+  align-self: flex-end;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.container-notes h1 {
+  color: white;
+}

@@ -1,0 +1,59 @@
+ul {
+    display: flex; /* Mengatur ul agar menggunakan flexbox */
+    flex-direction: row; /* Menampilkan item dalam baris */
+    flex-wrap: wrap; /* Membungkus item ke baris berikutnya jika melebihi batas */
+    padding: 0; /* Menghapus padding default */
+    list-style: none; /* Menghapus bullet point */
+}
+
+li {
+    flex: 0 1 calc(33.333% - 20px); /* Memastikan 3 item dalam satu baris */
+    display: flex; /* Tetap menggunakan flexbox untuk li */
+    flex-direction: column; /* Menyusun konten dalam kolom */
+    border: 1px solid white; /* Border putih */
+    border-radius: 5px; /* Sudut melengkung */
+    margin: 0.5rem; /* Tambahkan jarak antar li */
+    box-sizing: border-box; /* Memastikan padding tidak mempengaruhi total lebar/tinggi */
+    overflow: hidden;
+    height: 15rem; /* Tinggi item */
+}
+
+h2 {
+    margin-left: 0.5rem;
+}
+
+li h2 {
+    margin: 0.5rem;
+}
+
+.bodyNote {
+    flex: 1; /* Memungkinkan konten ini untuk mengambil ruang yang tersisa */
+    overflow-y: auto; /* Mengizinkan scroll jika konten melebihi tinggi */
+}
+
+li p {
+    margin: 0.5rem;
+}
+
+li button {
+    border: 1px solid white;
+    cursor: pointer; /* Ubah kursor saat hover */
+    padding: 10px; /* Padding internal */
+    border-radius: 5px; /* Sudut melengkung */
+    background-color: transparent; /* Latar belakang transparan */
+    margin-top: auto;
+    width: 50%;
+}
+
+.buttonContainer {
+    margin-top: auto;
+}
+
+li button:first-child {
+    color: red;
+}
+
+li button:last-child {
+    color: yellow;
+    margin-top: 0; /* Hapus margin atas untuk tombol kedua */
+}

@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
-import "./BuatCatatan.css";
-import ShowNote from './ShowNote';
+import React, { useState } from 'react';    //Memanggil useState untuk menyimpan input dan textarea
+import "./BuatCatatan.css"; //memanggil file css
+import ShowNote from './ShowNote'; //memanggil file ShowNote
 import Navbar from './Navbar';  // Import Navbar untuk search bar
+import { getInitialData } from './assets'; //import asset untuk mengambil data awal
 
 function BuatCatatan() {
-    const [inputValue, setInputValue] = useState('');
-    const [textareaValue, setTextareaValue] = useState('');
-    const [notes, setNotes] = useState([]);
+    const [inputValue, setInputValue] = useState(''); //membuat state untuk input
+    const [textareaValue, setTextareaValue] = useState(''); //membuat state untuk textarea
+    const [notes, setNotes] = useState(getInitialData); //membuat state untuk catatan yang dibuat
     const [searchTerm, setSearchTerm] = useState('');  // State untuk kata kunci pencarian
     
     const addNote = () => {
         if (!inputValue || !textareaValue) return;
         const note = {
-            id: Date.now(),
-            title: inputValue,
-            body: textareaValue,
-            archived: false,
-            createdAt: new Date().toLocaleDateString('id-ID', {
-                weekday: 'long', // Menampilkan nama hari
-                year: 'numeric', // Menampilkan tahun
-                month: 'long', // Menampilkan nama bulan
-                day: 'numeric' // Menampilkan tanggal
+            id: Date.now(), // mengambil data tanggal saat catatan dibuat
+            title: inputValue, // mengambil judul catatan
+            body: textareaValue, // mengambil isi catatan
+            archived: false, // mengambil status catatan
+            createdAt: new Date().toLocaleDateString('id-ID', { // format untuk penulisantanggal
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
             })
         };
-        event.preventDefault();
+        event.preventDefault(); // mencegah untuk reload saat submit ditekan/form dikirim
         setNotes([...notes, note]);
         setInputValue('');
         setTextareaValue('');

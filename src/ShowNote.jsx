@@ -1,4 +1,3 @@
-import React from "react";
 import "./ShowNote.css";
 
 const ShowNote = ({ notes, onDelete, onArchive, onRestore }) => {
